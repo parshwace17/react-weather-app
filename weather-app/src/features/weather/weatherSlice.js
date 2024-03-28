@@ -35,7 +35,7 @@ export const fetchWeather = (city) => {
     dispatch(fetchWeatherRequest()); // Dispatch fetchWeatherRequest action to set loading state
 
     try {
-      const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=313d5709ce08517cafe6c6294c069fc3`);
+      const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid={TOKEN}`);
       dispatch(fetchWeatherSuccess(response.data)); // Dispatch fetchWeatherSuccess action with weather data
     } catch (error) {
       dispatch(fetchWeatherFailure(error.message)); // Dispatch fetchWeatherFailure action with error message
